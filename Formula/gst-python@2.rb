@@ -1,8 +1,8 @@
 class GstPythonAT2 < Formula
   desc "Python@2 overrides for gobject-introspection-based pygst bindings"
   homepage "https://gstreamer.freedesktop.org/modules/gst-python.html"
-  url "https://gstreamer.freedesktop.org/src/gst-python/gst-python-1.14.4.tar.xz"
-  sha256 "d0fdb24f93b6d889f309d2f526b8ea9577e0084ff0a62b4623ef1aed52e85a1b"
+  url "https://gstreamer.freedesktop.org/src/gst-python/gst-python-1.16.0.tar.xz"
+  sha256 "55dc7aaed1855565f9b9ef842d93e93bfc5cb2b376faef6af5b463e1774e2d38"
   revision 1
 
   depends_on "gst-plugins-base"
@@ -15,10 +15,10 @@ class GstPythonAT2 < Formula
     python_version = Language::Python.major_minor_version("python2")
     # pygi-overrides-dir switch ensures files don't break out of sandbox.
     system "./configure", "--disable-dependency-tracking",
-                          "--disable-silent-rules",
-                          "--prefix=#{prefix}",
-                          "--with-pygi-overrides-dir=#{lib}/python#{python_version}/site-packages/gi/overrides",
-                          "PYTHON=python2"
+      "--disable-silent-rules",
+      "--prefix=#{prefix}",
+      "--with-pygi-overrides-dir=#{lib}/python#{python_version}/site-packages/gi/overrides",
+      "PYTHON=python2"
       system "make", "install"
   end
 
