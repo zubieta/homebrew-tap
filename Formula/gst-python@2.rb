@@ -5,8 +5,9 @@ class GstPythonAT2 < Formula
   sha256 "55dc7aaed1855565f9b9ef842d93e93bfc5cb2b376faef6af5b463e1774e2d38"
   revision 1
 
+  depends_on "pkg-config" => :build
   depends_on "gst-plugins-base"
-  depends_on "pygobject3" => "with-python@2"
+  depends_on "pygobject3@2"
   depends_on "python@2"
 
   conflicts_with "gst-python", :because => "Gstreamer only supports to be installed with python version at a time"
